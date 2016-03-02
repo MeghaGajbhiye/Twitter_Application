@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acumen Twitter App</title>
+</head>
+<body bgcolor="#33CCFF">
+<form method="post">
+<div>
+    <h1 id="header"><font size="10" color="blue">
+             Acumen Twitter Application!!
+             </font>
+    </h1>
+</div>
+    <table>
+        <thead>
+           <tr>
+              <th>Select Action</th>
+               <th></th>
+               <th>Buttons</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label name="st" ><font size="5" color="Yellow">Status Update:</font></label></td>
+                <td><input name="status" type = "text"/></td>
+                <td><button type="submit" value="Send" name="status_update_container">Submit</button></td>
+            </tr>
+            <tr>
+                <td><label name="search"><font size="5" color="Yellow">Get Timeline:</font></label></td>
+                <td><label name="note"><font size="3" color="green">Press the Button to get the Users Timeline:</font></label></td>
+                <td><button type="submit" value="Send" name="get_timeline_container">Get Time Line</button></td>
+            </tr>
+            <tr>
+                <td><label name="search"><font size="5" color="Yellow">Get Followers:</font></label></td>
+                <td><label name="note"><font size="3" color="green">Press the Button to get the Followers:</font></label></td>
+                <td><button type="submit" value="Send" name="get_timeline_container">Get Followers</button></td>
+            </tr>
+            <tr>
+                <td><label name="unfollow"><font size="5" color="Yellow">Unfollow:</font></label></td>
+                <td><input name="unfollow" type = "text"/></td>
+                <td><button type="submit" value="Send" name="unfollow_container">Unfollow</button></td>
+            </tr>
+            <tr>
+                <td><label name="friends"><font size="5" color="Yellow">Get Friends:</font></label></td>
+                <td><label name="friends"><font size="3" color="green">Press the Button to get the Friends:</font></label></td>
+                <td><button type="submit" value="Send" name="friends_container">Get Friends</button></td>
+            </tr>
+            <tr>
+                <td><label name="srch"><font size="5" color="Yellow">Search Tweets:</font></label></td>
+                <td><input name="find" type = "text"/></td>
+                <td><button type="submit" value="Send" name="tweets_container">Search Tweets</button></td>
+            </tr>
+            <tr>
+                <td><label name="settings"><font size="5" color="Yellow">Get Account Settings</font></label></td>
+                <td><label name="friends"><font size="3" color="green">Press the Button to get the account Settings:</font></label></td>
+                <td><button type="submit" value="Send" name="settings_container">Get Account Settings</button></td>
+            </tr>
+                        </tbody>
+                    </table>
+    <div class="container">
+      <div class="starter-template">
+        <div class="row" style="height:100vh;">
+                <div class="col-md-10 col-md-offset-1">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th><font color="white">Setting Name</font></th>
+                          <th><font color="white">Setting Value</font></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for val in output1 %}
+                        <tr>
+                          <td><font color="white">Screen Name</font></td>
+                          <td><font color="white">{{val.name}}</font></td>
+
+                        </tr>
+                        <tr>
+                          <td><font color="white">Language</font></td>
+                          <td><font color="white">{{val.lang}}</font></td>
+
+                        </tr>
+                        <tr>
+                          <td><font color="white">Use Cookie Personalization</font></td>
+                          <td><font color="white">{{val.cookie}}</font></td>
+
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+        </div>
+      </div>
+
+    <div class="container">
+      <div class="starter-template">
+        <div class="row" style="height:100vh;">
+                <div class="col-md-10 col-md-offset-1">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Screen Name</th>
+                          <th>Tweet</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for val in output %}
+                        <tr>
+                          <td>{{val.name}}</td>
+                          <td>{{val.tweet}}</td>
+
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+ </form>
+</body>
+</html>

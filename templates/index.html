@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Twitter</title>
+    </head>
+    <body style="background-image:url(assets/twitter2.jpg)" bgcolor="#33CCFF">
+         <form method="POST">
+         <h1 id="header"><font size="10" color="blue">
+             Acumen Twitter Application!!
+             </font>
+         </h1>
+         <div id="divTwitter"><font size="5" color="Yellow">To authorize the Application to Post on your Behalf, Please press the Link below :</font></div>
+                            </br>
+             <div id="twitterButton"><font size="5" color="white"><a href="{{ url_for('authenticate') }}">Login to Twitter</a></font></div>
+         </form>
+    </body>
+
+</html>
